@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import HeroSection from "./components/HeroSection"
 import Navbar from "./components/Navbar"
+import AboutSection from "./components/AboutSection";
 
 function App() {
   const [anchor, setAnchor] = useState("home");
@@ -70,7 +71,7 @@ function App() {
     <>
       <Navbar anchor={anchor} />
       <HeroSection />
-      <div id="about" className="container">about</div>
+      <AboutSection />
       <div id="services" className="container">services</div>
       <div id="portfolio" className="container">portfolio</div>
       <div id="contact" className="container">contact</div>
