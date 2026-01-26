@@ -290,6 +290,79 @@ html {
     }
 }
 
+.portfolio {
+    .portfolio-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .portfolio-content {
+            text-align: center;
+
+            .content {
+                &:first-child {
+                    color: $gold;
+                }
+
+                &:nth-child(2) {
+                    font-size: 48px;
+                }
+
+                &:nth-child(3) {
+                    width: 85px;
+                    height: 2px;
+                    background-color: $gold;
+                    margin: 0 auto;
+                }
+
+                &:last-child {
+                    color: $gray;
+
+                    p {
+                        text-wrap: balance;
+                        line-height: 1.5rem;
+
+                        &:not(:last-child) {
+                            margin-bottom: 1rem;
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            &.img-content {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                gap: 1rem;
+                margin-top: 2rem;
+
+                .img {
+                    height: 250px;
+                    overflow: hidden;
+                    max-width: calc((90% - 2rem) / 3);
+                    width: 100%;
+
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hero {
         .hero-container {
@@ -329,6 +402,19 @@ html {
             }
         }
     }
+
+    .portfolio {
+        .portfolio-container {
+            .portfolio-content {
+                &.img-content {
+                    .img {
+                        height: 120px;
+                        max-width: calc((90% - 2rem) / 3);
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -361,6 +447,35 @@ html {
                 &.card-content {
                     .card {
                         width: 100%;
+                        padding: 1rem;
+                        gap: 0.5rem;
+
+                        .card-img {
+                            max-width: 36px;
+                        }
+
+                        .card-title {
+                            font-size: 18px;
+                        }
+
+                        .card-desc {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .portfolio {
+        .portfolio-container {
+            .portfolio-content {
+                &.img-content {
+                    flex-direction: column;
+
+                    .img {
+                        height: 220px;
+                        max-width: 100%;
                     }
                 }
             }
