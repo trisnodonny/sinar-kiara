@@ -3,14 +3,14 @@ import about from "@images/about-us.png"
 export default function AboutSection() {
   return (
     <>
-      <div id="about" className="about">
+      <section id="about" className="about">
         <div className="about-container">
           <div className="about-content">
             <img src={about} alt="About" />
           </div>
           <div className="about-content">
             <div className="content">ABOUT US</div>
-            <div className="content">Driven by Experience Built on Trust.</div>
+            <div className="content pf">Driven by Experience Built on Trust.</div>
             <div className="content">
               <p>
                 We deliver professionally managed construction solutions for residential,
@@ -31,7 +31,7 @@ export default function AboutSection() {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

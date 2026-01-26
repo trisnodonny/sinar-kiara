@@ -9,7 +9,7 @@ html {
     font-family: 'Inter', sans-serif;
 }
 
-.playfair {
+.pf {
     font-family: "Playfair", serif;
 }
 
@@ -76,6 +76,7 @@ html {
         bottom: 0;
         left: 0;
         z-index: 1;
+        pointer-events: none;
     }
 
     .hero-container {
@@ -104,7 +105,6 @@ html {
 
             .content {
                 &:first-child {
-                    font-family: "Playfair", serif;
                     font-size: 72px;
                     text-wrap: balance;
                 }
@@ -139,13 +139,11 @@ html {
 }
 
 .about {
-    margin: 4rem 0;
-
     .about-container {
         display: flex;
         justify-content: center;
         align-items: center;
-        padding: 0 2rem;
+        padding: 4rem 2rem;
         gap: 2rem;
 
         .about-content {
@@ -163,7 +161,6 @@ html {
 
                 &:nth-child(2) {
                     font-size: 48px;
-                    font-family: 'Playfair', serif;
                 }
 
                 &:nth-child(3) {
@@ -208,6 +205,91 @@ html {
     }
 }
 
+.service {
+    background-color: $darkblue;
+
+    .service-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 4rem 2rem;
+        max-width: 1280px;
+        margin: 0 auto;
+
+        .service-content {
+            color: $white;
+
+            &:not(:last-child) {
+                margin-bottom: 2rem;
+            }
+
+            .content {
+                text-align: center;
+
+
+                &:first-child {
+                    color: $gold;
+                }
+
+                &:nth-child(2) {
+                    font-size: 48px;
+                }
+
+                &:nth-child(3) {
+                    width: 85px;
+                    height: 2px;
+                    background-color: $gold;
+                    margin: 0 auto;
+                }
+
+                &:last-child {
+                    color: $gray;
+                }
+
+                &:not(:last-child) {
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            &.card-content {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 1rem;
+
+                .card {
+                    background-color: rgba($white, 0.1);
+                    width: calc((100% - 2rem) / 3);
+                    padding: 2rem;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .card-img {
+                        max-width: 48px;
+                        padding: 0.5rem;
+                        background-color: rgba($black, 0.3);
+
+                        img {
+                            display: block;
+                            width: 100%;
+                        }
+                    }
+
+                    .card-title {
+                        font-size: 24px;
+                    }
+
+                    .card-desc {
+                        line-height: 1.5rem;
+                        color: $gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .hero {
         .hero-container {
@@ -235,19 +317,50 @@ html {
             }
         }
     }
+
+    .service {
+        .service-container {
+            .service-content {
+                &.card-content {
+                    .card {
+                        width: calc((100% - 1rem) / 2);
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
     .about {
         .about-container {
-            flex-direction: column;
-
             .about-content {
-
                 .content {
+
                     &:nth-child(3),
                     &:last-child {
-                        font-size: 14px;
+                        font-size: 12px;
+                    }
+
+                    &:last-child {
+                        .list {
+                            &::before {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .service {
+        .service-container {
+            .service-content {
+                &.card-content {
+                    .card {
+                        width: 100%;
                     }
                 }
             }

@@ -6,7 +6,7 @@ export default function HeroSection() {
         <div className="hero">
           <div className="hero-container">
             <div className="hero-content">
-              <div className="content">We Build Trust and Commitment</div>
+              <div className="content pf">We Build Trust and Commitment</div>
               <div className="content">
                 We are a civil and building construction company providing
                 structured, professionally managed construction solutions with a
