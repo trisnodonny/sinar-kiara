@@ -9,9 +9,9 @@ export default function AboutSection() {
             <img src={about} alt="About" />
           </div>
           <div className="about-content">
-            <div className="content">ABOUT US</div>
-            <div className="content pf">Driven by Experience Built on Trust.</div>
-            <div className="content">
+            <div className="content section">ABOUT US</div>
+            <div className="content title">Driven by Experience Built on Trust.</div>
+            <div className="content desc">
               <p>
                 We deliver professionally managed construction solutions for residential,
                 commercial, and institutional developments.
@@ -24,7 +24,7 @@ export default function AboutSection() {
                 dependable project outcomes.
               </p>
             </div>
-            <div className="content">
+            <div className="content detail">
               <div className="list">Strong project governance</div>
               <div className="list">Experienced construction management</div>
               <div className="list">Commitment to-safety, quality, and timely delivery</div>

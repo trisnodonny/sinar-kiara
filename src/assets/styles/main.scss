@@ -95,22 +95,23 @@ html {
             }
 
             .content {
-                &:first-child {
+                &.title {
                     font-size: 72px;
                     text-wrap: balance;
+                    @extend .pf;
 
                     @include screen-below(md) {
                         font-size: 48px;
                     }
                 }
 
-                &:nth-child(2) {
+                &.desc {
                     color: $gray;
                     line-height: 1.5rem;
                     text-wrap: balance;
                 }
 
-                &:last-child {
+                &.cta {
                     display: block;
                     background-color: $gold;
                     width: max-content;
@@ -135,7 +136,9 @@ html {
 
 .about {
     .about-container {
+        max-width: 1280px;
         padding: 4rem 2rem;
+        margin: 0 auto;
         gap: 2rem;
         @include flex();
 
@@ -152,19 +155,40 @@ html {
             }
 
             .content {
-                &:first-child {
-                    color: $gold;
+                @include screen-below(sm) {
+                    &.desc,
+                    &.detail {
+                        font-size: 12px;
+                    }
+
+                    &.detail {
+                        .list {
+                            &::before {
+                                width: 15px;
+                                height: 15px;
+                            }
+                        }
+                    }
                 }
 
-                &:nth-child(2) {
-                    font-size: 48px;
+                &.section {
+                    color: $gold;
+                }
+                
+                &.desc,
+                &.detail {
+                    color: $gray;
+                }
 
+                &.title {
+                    font-size: 48px;
+                    @extend .pf;
                     @include screen-below(md) {
                         font-size: 36px;
                     }
                 }
 
-                &:nth-child(3) {
+                &.desc {
                     p {
                         line-height: 1.5rem;
 
@@ -174,12 +198,7 @@ html {
                     }
                 }
 
-                &:nth-child(3),
-                &:last-child {
-                    color: $gray;
-                }
-
-                &:last-child {
+                &.detail {
                     .list {
                         display: flex;
                         align-items: center;
@@ -210,11 +229,9 @@ html {
     background-color: $darkblue;
 
     .service-container {
-        flex-direction: column;
         padding: 4rem 2rem;
         max-width: 1280px;
         margin: 0 auto;
-        @include flex();
 
         .service-content {
             color: $white;
@@ -226,12 +243,13 @@ html {
             .content {
                 text-align: center;
 
-                &:first-child {
+                &.section {
                     color: $gold;
                 }
 
-                &:nth-child(2) {
+                &.title {
                     font-size: 48px;
+                    @extend .pf;
                 }
 
                 &:nth-child(3) {
@@ -241,7 +259,7 @@ html {
                     margin: 0 auto;
                 }
 
-                &:last-child {
+                &.desc {
                     color: $gray;
                 }
 
@@ -265,6 +283,24 @@ html {
 
                     @include screen-below(md) {
                         width: calc((100% - 1rem) / 2);
+                    }
+
+                    @include screen-below(sm) {
+                        width: 100%;
+                        padding: 1rem;
+                        gap: 0.5rem;
+
+                        .card-img {
+                            max-width: 36px;
+                        }
+
+                        .card-title {
+                            font-size: 18px;
+                        }
+
+                        .card-desc {
+                            font-size: 14px;
+                        }
                     }
 
                     .card-img {
@@ -338,10 +374,14 @@ html {
             }
 
             &.img-content {
-                @include flex(center);
                 flex-wrap: wrap;
                 gap: 1rem;
                 margin-top: 2rem;
+                @include flex(center);
+
+                @include screen-below(sm) {
+                    flex-direction: column;
+                }
 
                 .img {
                     height: 250px;
@@ -353,6 +393,12 @@ html {
                         height: 120px;
                         max-width: calc((90% - 2rem) / 3);
                     }
+
+                    @include screen-below(sm) {
+                        height: 220px;
+                        max-width: 100%;
+                    }
+
 
                     img {
                         display: block;
@@ -381,6 +427,10 @@ html {
             width: 100%;
             padding-bottom: 4rem;
             gap: 4rem;
+
+            @include screen-below(sm) {
+                flex-direction: column;
+            }
 
             &::after {
                 content: "";
@@ -435,70 +485,4 @@ html {
         }
     }
 
-}
-
-@media screen and (max-width: 480px) {
-    .about {
-        .about-container {
-            .about-content {
-                .content {
-
-                    &:nth-child(3),
-                    &:last-child {
-                        font-size: 12px;
-                    }
-
-                    &:last-child {
-                        .list {
-                            &::before {
-                                width: 15px;
-                                height: 15px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .service {
-        .service-container {
-            .service-content {
-                &.card-content {
-                    .card {
-                        width: 100%;
-                        padding: 1rem;
-                        gap: 0.5rem;
-
-                        .card-img {
-                            max-width: 36px;
-                        }
-
-                        .card-title {
-                            font-size: 18px;
-                        }
-
-                        .card-desc {
-                            font-size: 14px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .portfolio {
-        .portfolio-container {
-            .portfolio-content {
-                &.img-content {
-                    flex-direction: column;
-
-                    .img {
-                        height: 220px;
-                        max-width: 100%;
-                    }
-                }
-            }
-        }
-    }
 }

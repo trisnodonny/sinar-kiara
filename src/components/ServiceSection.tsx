@@ -37,10 +37,10 @@ export default function ServiceSection() {
       <section id="services" className="service">
         <div className="service-container">
           <div className="service-content">
-            <div className="content">OUR SERVICES</div>
-            <div className="content pf">Comperhensive Construction Solutions</div>
+            <div className="content section">OUR SERVICES</div>
+            <div className="content title">Comperhensive Construction Solutions</div>
             <div className="content"></div>
-            <div className="content">We provide comprehensive construction services including:</div>
+            <div className="content desc">We provide comprehensive construction services including:</div>
           </div>
           <div className="service-content card-content">
             {cards.map((card, index) => (

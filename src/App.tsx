@@ -5,6 +5,7 @@ import AboutSection from "@components/AboutSection";
 import ServiceSection from "@components/ServiceSection";
 import PortfolioSection from "@components/PortfolioSection";
 import FooterSection from "@components/FooterSection";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   const [anchor, setAnchor] = useState("home");
@@ -77,7 +78,7 @@ function App() {
       <AboutSection />
       <ServiceSection />
       <PortfolioSection />
-      <div id="contact" className="container">contact</div>
+      <ContactSection />
       <FooterSection />
     </>
   )
