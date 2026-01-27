@@ -1,0 +1,24 @@
+@use "sass:color";
+@use "sass:map";
+
+@use "variables" as *;
+
+@mixin flex($position: flex-start, $align: center) {
+    display: flex;
+    justify-content: $position;
+    align-items: $align;
+}
+
+@mixin screen-below($breakpoint) {
+    @if map.has-key($breakpoints, $breakpoint) {
+        $breakpoint-value: map.get($breakpoints, $breakpoint);
+
+        @media (max-width: $breakpoint-value) {
+            @content;
+        }
+    }
+
+    @else {
+        @warn 'Invalid breakpoint: #{$breakpoint}.';
+    }
+}

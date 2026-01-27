@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import HeroSection from "./components/HeroSection"
-import Navbar from "./components/Navbar"
-import AboutSection from "./components/AboutSection";
-import ServiceSection from "./components/ServiceSection";
-import PortfolioSection from "./components/PortfolioSection";
+import HeroSection from "@components/HeroSection"
+import Navbar from "@components/Navbar"
+import AboutSection from "@components/AboutSection";
+import ServiceSection from "@components/ServiceSection";
+import PortfolioSection from "@components/PortfolioSection";
+import FooterSection from "@components/FooterSection";
 
 function App() {
   const [anchor, setAnchor] = useState("home");
@@ -77,6 +78,7 @@ function App() {
       <ServiceSection />
       <PortfolioSection />
       <div id="contact" className="container">contact</div>
+      <FooterSection />
     </>
   )
 }
