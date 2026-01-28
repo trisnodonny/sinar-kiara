@@ -45,6 +45,10 @@ export default function Navbar({ anchor }: NavbarProps) {
     };
   }, []);
 
+  const noSroll = () => {
+    
+  }
+
   return (
     <>
       <div className={`navbar ${navBgColor}`}>
@@ -52,22 +56,19 @@ export default function Navbar({ anchor }: NavbarProps) {
           <div className="nav-logo">
             <a href="/"><img src={sinar} alt="company" /></a>
           </div>
-          {width < 480 ? (
-            <div>
-              <img src={burger} alt="burger" />
-            </div>
-          ) : (
-            <div className="nav-links">
-              {links.map((link, index) => (
-                <a
-                  className={`link ${anchor === link.target ? "is-active" : ""}`}
-                  key={index}
-                  href={`#${link.target}`}>
-                  {link.label}
-                </a>
-              ))}
-            </div>
-          )}
+          <div className="nav-cta" onClick={noSroll}>
+            <img src={burger} alt="burger" />
+          </div>
+          <div className="nav-links">
+            {links.map((link, index) => (
+              <a
+                className={`link ${anchor === link.target ? "is-active" : ""}`}
+                key={index}
+                href={`#${link.target}`}>
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </>

@@ -22,8 +22,10 @@ export default function FooterSection() {
         <div className="footer-container">
           <div className="footer-content">
             <div className="content">
-              <div className="footer-text">
-                LOGO
+              <div className="footer-logo">
+                <a href="/">
+                  <img src={sinar} alt="company" />
+                </a>
               </div>
               <div className="footer-desc">Crafting exceptional structures with precision, innovation, and a commitment to excellence.</div>
             </div>

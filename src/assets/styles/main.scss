@@ -36,8 +36,9 @@ section {
     .navbar-container {
         max-width: 1280px;
         width: 100%;
-        padding: 1.5rem 1rem;
+        padding: 1rem;
         margin: 0 auto;
+        position: relative;
         @include flex();
 
         @include screen-below(sm) {
@@ -52,8 +53,22 @@ section {
 
                 img {
                     display: block;
-                    width: 60px;
+                    width: 50px;
                 }
+            }
+        }
+
+        .nav-cta {
+            display: none;
+            max-width: 35px;
+
+            img {
+                display: block;
+                width: 100%;
+            }
+
+            @include screen-below(xs) {
+                display: block;
             }
         }
 
@@ -68,6 +83,23 @@ section {
                 &.is-active,
                 &:hover {
                     color: $gold;
+                }
+            }
+
+            @include screen-below(xs) {
+                position: absolute;
+                flex-direction: column;
+                top: 57px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: $darkblue;
+                gap: 0;
+                width: 100%;
+
+                .link {
+                    width: 100%;
+                    padding: 1rem;
+                    text-align: center;
                 }
             }
         }
@@ -449,6 +481,10 @@ section {
                             padding: 0.5rem;
                         }
 
+                        textarea {
+                            resize: none;
+                        }
+
                         &:not(:last-child) {
                             margin-bottom: 2rem;
                         }
@@ -520,6 +556,18 @@ section {
                     flex: 2;
                 }
 
+                .footer-logo {
+                    margin-bottom: 2rem;
+                    width: max-content;
+
+                    a {
+                        img {
+                            display: block;
+                            width: 50px;
+                        }
+                    }
+                }
+
                 .footer-desc {
                     color: $gray;
                     line-height: 1.5rem;
@@ -538,6 +586,7 @@ section {
 
                     a {
                         color: $gray;
+                        width: max-content;
 
                         &:hover {
                             text-decoration: underline;
