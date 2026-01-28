@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import sinar from "@icons/sinar-kiara.png";
 
 type NavbarProps = {
   anchor: string;
@@ -48,7 +49,7 @@ export default function Navbar({ anchor }: NavbarProps) {
       <div className={`navbar ${navBgColor}`}>
         <div className="navbar-container">
           <div className="nav-logo">
-            <a href="/">Sinar</a>
+            <a href="/"><img src={sinar} alt="company" /></a>
           </div>
           {width < 480 ? (
             <div>mobile</div>

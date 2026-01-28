@@ -16,7 +16,7 @@ export default function FooterSection() {
 
   return (
     <>
-      <div className="footer">
+      <section className="footer">
         <div className="footer-container">
           <div className="footer-content">
             <div className="content">
@@ -46,7 +46,7 @@ export default function FooterSection() {
             <div>© 2026 Sinar Kiara. All rights reserved.</div>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

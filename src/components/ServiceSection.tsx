@@ -24,7 +24,7 @@ export default function ServiceSection() {
     {
       img: wrench,
       title: "Renovation & Refurbishment",
-      desc: "Transform existing spaces with our renovation expertise, breathing new life into your properties."
+      desc: "Transform existing spaces with our re novation expertise, breathing new life into your properties."
     },
     {
       img: pen,
@@ -34,21 +34,23 @@ export default function ServiceSection() {
   ]
   return (
     <>
-      <section id="services" className="service">
-        <div className="service-container">
-          <div className="service-content">
-            <div className="content section">OUR SERVICES</div>
-            <div className="content title">Comperhensive Construction Solutions</div>
-            <div className="content"></div>
-            <div className="content desc">We provide comprehensive construction services including:</div>
+      <section id="services" className="bg-darkblue">
+        <div className="container col">
+          <div className="content-title">
+            <div className="section">OUR SERVICES</div>
+            <div className="title fff">Comperhensive Construction Solutions</div>
+            <span></span>
           </div>
-          <div className="service-content card-content">
+          <div className="content-desc">
+            <p>We provide comprehensive construction services including:</p>
+          </div>
+          <div className="content content-card">
             {cards.map((card, index) => (
               <div key={index} className="card">
                 <div className="card-img">
                   <img src={card.img} alt={card.title} />
                 </div>
-                <div className="card-title pf">{card.title}</div>
+                <div className="card-title">{card.title}</div>
                 <div className="card-desc">{card.desc}</div>
               </div>
             ))}

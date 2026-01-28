@@ -14,22 +14,26 @@ export default function PortfolioSection() {
   ]
   return (
     <>
-      <div id="portfolio" className="portfolio">
-        <div className="portfolio-container">
-          <div className="portfolio-content">
-            <div className="content">OUR PORTFOLIO</div>
-            <div className="content pf">Current Projects</div>
-            <div className="content"></div>
-            <div className="content">
+      <section id="portfolio">
+        <div className="container col">
+          <div className="content">
+            <div className="content-title">
+              <div className="section">OUR PORTFOLIO</div>
+              <div className="title">Current Projects</div>
+              <span></span>
+            </div>
+            <div className="content-desc">
               <p>
-                We are currently involved in active construction works across residential, commercial, and institutional developments.
+                We are currently involved in active construction works across residential,
+                commercial, and institutional developments.
               </p>
               <p>
-                Our focus remains on responsible execution, regulatory compliance, quality workmanship, and timely delivery for every project entrusted to us.
+                Our focus remains on responsible execution, regulatory compliance,
+                quality workmanship, and timely delivery for every project entrusted to us.
               </p>
             </div>
           </div>
-          <div className="portfolio-content img-content">
+          <div className="content content-img">
             {images.map((image, index) => (
               <div key={index} className="img">
                 <img src={image.src} alt={image.label} />
@@ -37,7 +41,7 @@ export default function PortfolioSection() {
             ))}
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

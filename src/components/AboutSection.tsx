@@ -3,15 +3,15 @@ import about from "@images/about-us.png"
 export default function AboutSection() {
   return (
     <>
-      <section id="about" className="about">
-        <div className="about-container">
-          <div className="about-content">
+      <section id="about">
+        <div className="container">
+          <div className="content-img">
             <img src={about} alt="About" />
           </div>
-          <div className="about-content">
-            <div className="content section">ABOUT US</div>
-            <div className="content title">Driven by Experience Built on Trust.</div>
-            <div className="content desc">
+          <div className="content-text">
+            <div className="text section">ABOUT US</div>
+            <div className="text title">Driven by Experience Built on Trust.</div>
+            <div className="text desc">
               <p>
                 We deliver professionally managed construction solutions for residential,
                 commercial, and institutional developments.
@@ -24,7 +24,7 @@ export default function AboutSection() {
                 dependable project outcomes.
               </p>
             </div>
-            <div className="content detail">
+            <div className="text">
               <div className="list">Strong project governance</div>
               <div className="list">Experienced construction management</div>
               <div className="list">Commitment to-safety, quality, and timely delivery</div>
