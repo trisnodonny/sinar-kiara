@@ -63,7 +63,7 @@ export default function Navbar({ anchor }: NavbarProps) {
           <div className={`nav-links ${isOpen ? "is-active" : ""}`}>
             {links.map((link, index) => (
               <a
-                className={`link ${anchor === link.target ? "is-active" : ""}`}
+                className={`link ${anchor === link.target ? "is-selected" : ""}`}
                 key={index}
                 href={`#${link.target}`}
                 onClick={closeNavbar}>
@@ -72,7 +72,7 @@ export default function Navbar({ anchor }: NavbarProps) {
             ))}
           </div>
         </div>
-        {isOpen ? (<div className="overlay"></div>) : ("")}
+        <div className={`overlay ${isOpen ? "is-open" : ""}`} onClick={closeNavbar}></div>
       </div>
     </>
   )

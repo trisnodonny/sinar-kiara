@@ -10,10 +10,10 @@ export default function FooterSection() {
   ]
 
   const services = [
-    { label: "Commercial Construction", target: "/" },
-    { label: "Residential Development", target: "/" },
-    { label: "Interior Design", target: "/" },
-    { label: "Project Management", target: "/" },
+    { label: "Commercial Construction" },
+    { label: "Residential Development" },
+    { label: "Interior Design" },
+    { label: "Project Management" },
   ]
 
   return (
@@ -33,7 +33,7 @@ export default function FooterSection() {
               <div className="footer-text">Quick Links</div>
               <div className="footer-links">
                 {quickLinks.map((ql, index) => (
-                  <a key={index} href={`#${ql.target}`}>{ql.label}</a>
+                  <a key={index} href={`#${ql.target}`} className="link-list">{ql.label}</a>
                 ))}
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function FooterSection() {
               <div className="footer-text">Services</div>
               <div className="footer-links">
                 {services.map((service, index) => (
-                  <a key={index} href={service.target}>{service.label}</a>
+                  <div key={index} className="link-list">{service.label}</div>
                 ))}
               </div>
             </div>
