@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import sinar from "@icons/sinar-kiara.png";
+import burger from "@icons/burger.png";
 
 type NavbarProps = {
   anchor: string;
@@ -52,7 +53,9 @@ export default function Navbar({ anchor }: NavbarProps) {
             <a href="/"><img src={sinar} alt="company" /></a>
           </div>
           {width < 480 ? (
-            <div>mobile</div>
+            <div>
+              <img src={burger} alt="burger" />
+            </div>
           ) : (
             <div className="nav-links">
               {links.map((link, index) => (

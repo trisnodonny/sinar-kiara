@@ -1,3 +1,5 @@
+import sinar from "@icons/sinar-kiara.png";
+
 export default function FooterSection() {
   const quickLinks = [
     { label: "Home", target: "home" },
