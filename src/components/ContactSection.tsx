@@ -59,12 +59,12 @@ export default function ContactSection() {
                             <div className="content-info-map">
                                 <iframe
                                     width="100%"
-                                    height="450"
+                                    height="300"
                                     style={{ border: 0 }}
                                     loading="lazy"
                                     allowFullScreen
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    src="https://www.google.com/maps/embed/v1/place?key=API_KEY&q=Space+Needle,Seattle+WA"
+                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDFow95mX0qGjHeQeTfBmlDynB_x2vGgBY&q=Suite+B-3A-17+Empire+SOHO,+Empire+Shopping+Gallery,+Jalan+SS16/1,+47500,+Subang+Jaya,+Selangor"
                                 />
                             </div>
                         </div>

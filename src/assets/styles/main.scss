@@ -78,7 +78,7 @@ section {
 
             .link {
                 color: $white;
-                transition: all 0.2s ease-in-out;
+                transition: all 0.1s ease-in-out;
 
                 &.is-active,
                 &:hover {
@@ -87,22 +87,41 @@ section {
             }
 
             @include screen-below(xs) {
+                display: none;
                 position: absolute;
                 flex-direction: column;
-                top: 57px;
+                top: 0;
                 left: 50%;
                 transform: translateX(-50%);
                 background-color: $darkblue;
                 gap: 0;
                 width: 100%;
+                padding-top: 58px;
+                z-index: -1;
+
+                &.is-active {
+                    display: flex;
+                }
 
                 .link {
                     width: 100%;
-                    padding: 1rem;
+                    padding: 1.5rem 1rem;
                     text-align: center;
                 }
             }
         }
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba($black, 0.6);
+        z-index: -10;
+        user-select: none;
+        pointer-events: none;
     }
 }
 
