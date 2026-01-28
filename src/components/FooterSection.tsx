@@ -33,7 +33,7 @@ export default function FooterSection() {
               <div className="footer-text">Quick Links</div>
               <div className="footer-links">
                 {quickLinks.map((ql, index) => (
-                  <a key={index} href={`#${ql.target}`} className="link-list">{ql.label}</a>
+                  <a key={index} href={`#${ql.target}`} className="link">{ql.label}</a>
                 ))}
               </div>
             </div>
@@ -41,7 +41,7 @@ export default function FooterSection() {
               <div className="footer-text">Services</div>
               <div className="footer-links">
                 {services.map((service, index) => (
-                  <div key={index} className="link-list">{service.label}</div>
+                  <div key={index} className="list">{service.label}</div>
                 ))}
               </div>
             </div>

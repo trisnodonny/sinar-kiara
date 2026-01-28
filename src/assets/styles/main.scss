@@ -622,10 +622,13 @@ section {
                     flex-direction: column;
                     gap: 1rem;
 
-                    .link-list {
+                    .link,
+                    .list {
                         color: $gray;
                         width: max-content;
+                    }
 
+                    .link {
                         &:hover {
                             text-decoration: underline;
                         }
