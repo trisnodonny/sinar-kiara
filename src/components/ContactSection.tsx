@@ -2,6 +2,7 @@ import callus from "@icons/call-us.png";
 import emailus from "@icons/email-us.png";
 import visitus from "@icons/visit-us.png";
 import businesshour from "@icons/business-hour.png";
+const API_KEY = import.meta.env.VITE_API_URL
 
 export default function ContactSection() {
     const informations = [
@@ -64,7 +65,7 @@ export default function ContactSection() {
                                     loading="lazy"
                                     allowFullScreen
                                     referrerPolicy="no-referrer-when-downgrade"
-                                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDFow95mX0qGjHeQeTfBmlDynB_x2vGgBY&q=Suite+B-3A-17+Empire+SOHO,+Empire+Shopping+Gallery,+Jalan+SS16/1,+47500,+Subang+Jaya,+Selangor"
+                                    src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}&q=Suite+B-3A-17+Empire+SOHO,+Empire+Shopping+Gallery,+Jalan+SS16/1,+47500,+Subang+Jaya,+Selangor`}
                                 />
                             </div>
                         </div>
