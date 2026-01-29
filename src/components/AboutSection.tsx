@@ -6,11 +6,13 @@ export default function AboutSection() {
       <section id="about">
         <div className="container about">
           <div className="content-img">
-            <img src={about} alt="About" />
+            <div className="container-img">
+              <img src={about} alt="About" />
+            </div>
           </div>
           <div className="content-text">
             <div className="text section">ABOUT US</div>
-            <div className="text title">Driven by Experience Built on Trust.</div>
+            <div className="text title">Driven by Experience <br /> Built on Trust.</div>
             <div className="text desc">
               <p>
                 We deliver professionally managed construction solutions for residential,

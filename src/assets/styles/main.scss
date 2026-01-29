@@ -15,7 +15,7 @@ html {
 }
 
 section {
-    scroll-margin-top: 64px;
+    scroll-margin-top: 74px;
 
     @include screen-below(xs) {
         scroll-margin-top: 57px;
@@ -23,6 +23,10 @@ section {
 
     &.bg-darkblue {
         background-color: $darkblue;
+    }
+
+    &.bg-lightgray {
+        background-color: $lightgray;
     }
 }
 
@@ -57,7 +61,7 @@ section {
 
                 img {
                     display: block;
-                    width: 50px;
+                    width: 65px;
                 }
             }
         }
@@ -225,7 +229,7 @@ section {
 }
 
 .container {
-    padding: 4rem 2rem;
+    padding: 6rem 2rem;
     max-width: 1280px;
     margin: 0 auto;
     gap: 2rem;
@@ -239,9 +243,35 @@ section {
         .content-img {
             flex: 1;
 
-            img {
-                display: block;
-                width: 100%;
+            .container-img {
+                margin: 0 auto;
+                width: 500px;
+                height: 400px;
+                position: relative;
+
+                @include screen-below(xs) {
+                    width: 320px;
+                    height: 240px;
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    display: block;
+                    border: 1px solid $gold;
+                    height: 100%;
+                    width: 100%;
+                    z-index: -1;
+                    top: -5%;
+                    left: -5%;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
             }
         }
 
@@ -256,6 +286,10 @@ section {
                 &.title {
                     font-size: 48px;
                     @extend .pf;
+
+                    @include screen-below(xs) {
+                        font-size: 36px;
+                    }
                 }
 
                 &.desc,
@@ -332,6 +366,10 @@ section {
                     text-align: center;
                     font-size: 48px;
                     @extend .pf;
+
+                    @include screen-below(xs) {
+                        font-size: 36px;
+                    }
 
                     &.fff {
                         color: $white;
@@ -433,11 +471,47 @@ section {
                 }
 
                 .img {
+                    position: relative;
                     height: 250px;
                     overflow: hidden;
                     max-width: calc((90% - 2rem) / 3);
                     width: 100%;
 
+                    &:hover {
+                        .img-label {
+                            opacity: 1;
+                        }
+                    }
+
+                    .img-label {
+                        position: absolute;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                        transition: all 100ms ease-in-out;
+                        color: $white;
+                        opacity: 0;
+
+                        span {
+                            display: block;
+                            position: absolute;
+                            bottom: 25px;
+                            left: 20px;
+                            z-index: 10;
+
+                            @extend .pf;
+                        }
+
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            bottom: 0;
+                            right: 0;
+                            background-image: linear-gradient(to top, rgba($black, 0.7), transparent);
+                        }
+                    }
 
                     img {
                         display: block;
@@ -462,7 +536,7 @@ section {
                 width: 100%;
                 gap: 2rem;
                 margin-top: 2rem;
-                @include flex();
+                @include flex(center, flex-start);
 
                 @include screen-below(sm) {
                     flex-direction: column;
@@ -488,12 +562,16 @@ section {
                         &-text {
                             .label {
                                 font-weight: bold;
-                                margin-bottom: 1rem;
+                                margin-bottom: 0.5rem;
                             }
 
                             .detail {
                                 color: $gray;
                                 line-height: 1.5;
+                            }
+
+                            @include screen-below(xs) {
+                                font-size: 14px;
                             }
                         }
 
@@ -512,11 +590,34 @@ section {
                             margin-bottom: 0.5rem;
                         }
 
+                        input {
+                            height: 2.5rem;
+                        }
+
+                        input[type="number"]::-webkit-outer-spin-button,
+                        input[type="number"]::-webkit-inner-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        input[type="number"] {
+                            -moz-appearance: textfield;
+                        }
+
                         input,
                         textarea {
                             border: 1px rgba($gray, 0.5) solid;
                             width: 100%;
                             padding: 0.5rem;
+
+                            &.required {
+                                border-color: $red;
+                            }
+
+                            &:focus {
+                                border-color: $gold;
+                                outline: none;
+                            }
                         }
 
                         textarea {
@@ -545,10 +646,27 @@ section {
                         padding: 1rem 2rem;
                         color: $black;
                         transition: all 0.2s ease-in-out;
+                        cursor: pointer;
 
                         &:hover {
                             background-color: rgba($gold, 0.7);
                             color: $white;
+                        }
+                    }
+
+                    .message {
+                        display: none;
+
+                        &.error {
+                            display: block;
+                            color: $red;
+                            margin-bottom: 1rem;
+                        }
+
+                        &.success {
+                            display: block;
+                            color: $green;
+                            margin-top: 1rem;
                         }
                     }
                 }
@@ -601,7 +719,7 @@ section {
                     a {
                         img {
                             display: block;
-                            width: 50px;
+                            width: 65px;
                         }
                     }
                 }

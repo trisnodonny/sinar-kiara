@@ -6,15 +6,15 @@ import b5 from "@images/b5.png"
 
 export default function PortfolioSection() {
   const images = [
-    { label: "b1", src: b1 },
-    { label: "b2", src: b2 },
-    { label: "b3", src: b3 },
-    { label: "b4", src: b4 },
-    { label: "b5", src: b5 }
+    { label: "Project 1", src: b1 },
+    { label: "Project 2", src: b2 },
+    { label: "Project 3", src: b3 },
+    { label: "Project 4", src: b4 },
+    { label: "Porject 5", src: b5 }
   ]
   return (
     <>
-      <section id="portfolio">
+      <section id="portfolio" className="bg-lightgray">
         <div className="container col">
           <div className="content">
             <div className="content-title">
@@ -36,6 +36,9 @@ export default function PortfolioSection() {
           <div className="content content-img">
             {images.map((image, index) => (
               <div key={index} className="img">
+                <div className="img-label">
+                  <span>{image.label}</span>
+                </div>
                 <img src={image.src} alt={image.label} />
               </div>
             ))}
