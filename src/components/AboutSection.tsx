@@ -12,7 +12,7 @@ export default function AboutSection() {
           </div>
           <div className="content-text">
             <div className="text section">ABOUT US</div>
-            <div className="text title">Driven by Experience <br /> Built on Trust.</div>
+            <div className="text title">Driven by Experience. <br /> Built on Trust.</div>
             <div className="text desc">
               <p>
                 We deliver professionally managed construction solutions for residential,
