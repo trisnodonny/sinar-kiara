@@ -27,7 +27,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const sections = ["about", "services", "portfolio", "contact"];
+    const sections = ["about", "services", "portfolio", "contact", "footer"];
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;

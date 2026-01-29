@@ -18,7 +18,7 @@ export default function FooterSection() {
 
   return (
     <>
-      <section className="footer">
+      <section id="footer" className="footer">
         <div className="footer-container">
           <div className="footer-content">
             <div className="content">
