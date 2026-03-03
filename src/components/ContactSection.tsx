@@ -2,8 +2,10 @@ import callus from "@icons/call-us.png";
 import emailus from "@icons/email-us.png";
 import visitus from "@icons/visit-us.png";
 import businesshour from "@icons/business-hour.png";
-import { useState } from "react";
+import emailjs from "@emailjs/browser"
+import { useEffect, useState } from "react";
 const API_KEY = import.meta.env.VITE_API_URL
+const MSG_API_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 export default function ContactSection() {
     const informations = [
@@ -40,18 +42,39 @@ export default function ContactSection() {
     const [allRequired, setAllRequired] = useState(true)
     const [success, setSuccess] = useState(false)
 
-    const checkAllField = () => {
-        if (dataInput.fullName === "" ||
-            dataInput.email === "" ||
-            dataInput.phoneNumber === "" ||
-            dataInput.subject === "" ||
-            dataInput.message === "") {
-            setAllRequired(false)
-            setSuccess(false)
-        } else {
-            setAllRequired(true)
-            setSuccess(true)
+    const checkAllField = async () => {
+        if (
+            !dataInput.fullName ||
+            !dataInput.email ||
+            !dataInput.phoneNumber ||
+            !dataInput.subject ||
+            !dataInput.message
+        ) {
+            setAllRequired(false);
+            setSuccess(false);
+            return;
+        }
 
+        setAllRequired(true);
+
+        try {
+            const response = await emailjs.send(
+                "service_0fux2qo",
+                "template_38z6or8",
+                {
+                    fullName: dataInput.fullName,
+                    email: dataInput.email,
+                    phoneNumber: dataInput.phoneNumber,
+                    subject: dataInput.subject,
+                    message: dataInput.message,
+                },
+                MSG_API_KEY
+            );
+
+            console.log("SUCCESS!", response.status, response.text);
+            setSuccess(true);
+
+            // Clear form
             setDataInput({
                 fullName: "",
                 email: "",
@@ -59,11 +82,20 @@ export default function ContactSection() {
                 subject: "",
                 message: "",
             });
-        }
-    }
 
-    const sendMessage = () => {
-        checkAllField()
+        } catch (error) {
+            console.error("FAILED...", error);
+            setSuccess(false);
+        }
+    };
+
+    useEffect(() => {
+        emailjs.init(MSG_API_KEY)
+    }, [])
+
+    const sendMessage = async (ev: any) => {
+        ev.preventDefault()
+        await checkAllField()
     }
 
     return (
@@ -135,7 +167,7 @@ export default function ContactSection() {
                                 </div>
                                 <div className="input-box">
                                     <div className="label">Phone Number</div>
-                                    <input type="number" className={`${allRequired || dataInput.phoneNumber ? "" : "required"}`}
+                                    <input type="tel" className={`${allRequired || dataInput.phoneNumber ? "" : "required"}`}
                                         value={dataInput.phoneNumber}
                                         onChange={(e) =>
                                             setDataInput(prev => ({
