@@ -1,16 +1,16 @@
-import b1 from "@images/b1.png"
-import b2 from "@images/b2.png"
-import b3 from "@images/b3.png"
-import b4 from "@images/b4.png"
-import b5 from "@images/b5.png"
+import p1 from "@images/current-projects/p1.png"
+import p2 from "@images/current-projects/p2.png"
+import p3 from "@images/current-projects/p3.png"
+import p4 from "@images/current-projects/p4.png"
+import p5 from "@images/current-projects/p5.png"
 
 export default function PortfolioSection() {
   const images = [
-    { label: "Project 1", src: b1 },
-    { label: "Project 2", src: b2 },
-    { label: "Project 3", src: b3 },
-    { label: "Project 4", src: b4 },
-    { label: "Porject 5", src: b5 }
+    { label: "Conrad Hotel", src: p1 },
+    { label: "Malaysia Baptist Convention", src: p2 },
+    { label: "Life Centre", src: p3 },
+    { label: "BYD Showroom", src: p4 },
+    { label: "Yanu Hills (10 Units Bungalow)", src: p5 }
   ]
   return (
     <>

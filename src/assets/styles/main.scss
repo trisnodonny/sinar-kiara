@@ -483,6 +483,7 @@ section {
                         }
                     }
 
+                    
                     .img-label {
                         position: absolute;
                         display: block;
@@ -491,7 +492,11 @@ section {
                         transition: all 100ms ease-in-out;
                         color: $white;
                         opacity: 0;
-
+                        
+                        @include screen-below(xs) {
+                            opacity: 1;
+                        }
+                        
                         span {
                             display: block;
                             position: absolute;
@@ -770,6 +775,7 @@ section {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -778,8 +784,7 @@ section {
 #about,
 #services,
 #portfolio,
-#contact
- {
+#contact {
     animation: appear linear;
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
