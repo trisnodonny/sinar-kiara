@@ -12,12 +12,12 @@ export default function ContactSection() {
         {
             icon: callus,
             label: "Call Us",
-            detail: "012 345 6789"
+            detail: "03 - 5612 8471"
         },
         {
             icon: emailus,
             label: "Email Us",
-            detail: "info@sinarkiara.com"
+            detail: "sinarkiarahq@gmail.com"
         },
         {
             icon: visitus,
@@ -27,7 +27,7 @@ export default function ContactSection() {
         {
             icon: businesshour,
             label: "Business Hours",
-            detail: "Monday - Friday: 8:00 AM - 6:00 PM"
+            detail: "Monday - Friday: 9:00 AM - 6:00 PM"
         },
     ]
 
