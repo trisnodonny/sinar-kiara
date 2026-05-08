@@ -6,11 +6,11 @@ import p5 from "@images/current-projects/p5.png"
 
 export default function PortfolioSection() {
   const images = [
-    { label: "Conrad Hotel", src: p1 },
-    { label: "Malaysia Baptist Convention", src: p2 },
-    { label: "Life Centre", src: p3 },
-    { label: "BYD Showroom", src: p4 },
-    { label: "Yanu Hills (10 Units Bungalow)", src: p5 }
+    { label: "Conrad Hotel", src: p1, alt: 'Conrad Hotel construction project in progress' },
+    { label: "Malaysia Baptist Convention", src: p2, alt: 'Malaysia Baptist Convention building under construction' },
+    { label: "Life Centre", src: p3, alt: 'Modern life centre construction project in progress' },
+    { label: "BYD Showroom", src: p4, alt: 'Ongoing construction of BYD electric vehicle showroom' },
+    { label: "Yanu Hills (10 Units Bungalow)", src: p5, alt: 'Yanu Hills development site in progress' }
   ]
   return (
     <>
@@ -39,7 +39,7 @@ export default function PortfolioSection() {
                 <div className="img-label">
                   <span>{image.label}</span>
                 </div>
-                <img src={image.src} alt={image.label} />
+                <img src={image.src} alt={image.alt} />
               </div>
             ))}
           </div>

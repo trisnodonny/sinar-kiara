@@ -55,10 +55,10 @@ export default function Navbar({ anchor }: NavbarProps) {
       <div className={`navbar ${navBgColor}`}>
         <div className="navbar-container">
           <div className="nav-logo">
-            <a href="/"><img src={sinar} alt="company" /></a>
+            <a href="/"><img src={sinar} alt="Sinar Kiara Logo" /></a>
           </div>
           <div className="nav-cta" onClick={openNavbar}>
-            <img src={burger} alt="burger" />
+            <img src={burger} alt="Burger CTA button" />
           </div>
           <div className={`nav-links ${isOpen ? "is-active" : ""}`}>
             {links.map((link, index) => (

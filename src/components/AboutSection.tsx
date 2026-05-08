@@ -7,7 +7,7 @@ export default function AboutSection() {
         <div className="container about">
           <div className="content-img">
             <div className="container-img">
-              <img src={about} alt="About" />
+              <img src={about} alt="About Sinar Kiara" />
             </div>
           </div>
           <div className="content-text">

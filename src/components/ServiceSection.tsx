@@ -48,7 +48,7 @@ export default function ServiceSection() {
             {cards.map((card, index) => (
               <div key={index} className="card">
                 <div className="card-img">
-                  <img src={card.img} alt={card.title} />
+                  <img src={card.img} alt={card.desc} />
                 </div>
                 <div className="card-title">{card.title}</div>
                 <div className="card-desc">{card.desc}</div>

@@ -12,21 +12,25 @@ export default function ContactSection() {
         {
             icon: callus,
             label: "Call Us",
+            alt: 'Call us at 03 - 5612 8471',
             detail: "03 - 5612 8471"
         },
         {
             icon: emailus,
             label: "Email Us",
+            alt: 'Send us an email at sinarkiarahq@gmail.com',
             detail: "sinarkiarahq@gmail.com"
         },
         {
             icon: visitus,
             label: "Visit Us",
+            alt: 'Visit our office at Suite B-3A-17 Empire SOHO, Empire Shopping Gallery, Jalan SS16/1. 47500, Subang Jaya, Selangor',
             detail: `Suite B-3A-17 Empire SOHO, Empire Shopping Gallery, Jalan SS16/1. 47500, Subang Jaya, Selangor`
         },
         {
             icon: businesshour,
             label: "Business Hours",
+            alt: 'Business hours are Monday to Friday, 9:00 AM to 6:00 PM',
             detail: "Monday - Friday: 9:00 AM - 6:00 PM"
         },
     ]
@@ -119,7 +123,7 @@ export default function ContactSection() {
                             {informations.map((info, index) => (
                                 <div key={index} className="info-card">
                                     <div className="info-card-img">
-                                        <img src={info.icon} alt={info.label} />
+                                        <img src={info.icon} alt={info.alt} />
                                     </div>
                                     <div className="info-card-text">
                                         <p className="label">{info.label}</p>
